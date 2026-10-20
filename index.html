@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Didi's 30 · Midnight Jazz & Island Grooves</title>
+  <meta name="description" content="Marindi fête ses 30 ans ! Samedi 21 novembre au Mas des Sauges — Midnight Jazz & Island Grooves." />
+  <meta property="og:title" content="Didi's 30 · Midnight Jazz & Island Grooves" />
+  <meta property="og:description" content="Samedi 21 novembre · Mas des Sauges. Sors ton plus beau costume, on fête les 30 ans de Didi !" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎷</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Limelight&family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Pacifico&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="stars" aria-hidden="true"></canvas>
+  <canvas id="confetti" aria-hidden="true"></canvas>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <a href="#top" class="nav-logo">D<span>30</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#infos">Infos</a></li>
+      <li><a href="#theme">Le thème</a></li>
+      <li><a href="#dresscode">Dress code</a></li>
+      <li><a href="#programme">Programme</a></li>
+      <li><a href="#playlist">Playlist</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#rsvp" class="nav-cta">Je viens !</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero" id="top">
+    <div class="moon" aria-hidden="true"></div>
+    <div class="notes" aria-hidden="true">
+      <span>♪</span><span>♫</span><span>♩</span><span>♬</span><span>♪</span><span>♫</span>
+    </div>
+
+    <div class="hero-content">
+      <p class="hero-kicker">Marindi vous invite à fêter ses</p>
+      <h1 class="hero-title">
+        <span class="title-didi">Didi's</span>
+        <span class="title-30">30</span>
+      </h1>
+      <p class="hero-theme">
+        <span class="jazz">Midnight Jazz</span>
+        <span class="amp">&</span>
+        <span class="island">Island Grooves</span>
+      </p>
+      <div class="deco-line" aria-hidden="true"><span>◆</span></div>
+      <p class="hero-date">Samedi 21 novembre · Mas des Sauges</p>
+
+      <div class="countdown" id="countdown" aria-live="polite">
+        <div class="cd-box"><span class="cd-num" id="cd-days">--</span><span class="cd-label">jours</span></div>
+        <div class="cd-box"><span class="cd-num" id="cd-hours">--</span><span class="cd-label">heures</span></div>
+        <div class="cd-box"><span class="cd-num" id="cd-mins">--</span><span class="cd-label">minutes</span></div>
+        <div class="cd-box"><span class="cd-num" id="cd-secs">--</span><span class="cd-label">secondes</span></div>
+      </div>
+      <p class="countdown-done" id="countdownDone" hidden>🎉 C'est le grand soir ! 🎉</p>
+
+      <div class="hero-buttons">
+        <a href="#rsvp" class="btn btn-gold">Je confirme ma venue</a>
+        <a href="#infos" class="btn btn-ghost">Les infos</a>
+      </div>
+    </div>
+
+    <div class="palms" aria-hidden="true">
+      <svg class="palm palm-left" viewBox="0 0 200 400"><use href="#palm" /></svg>
+      <svg class="palm palm-right" viewBox="0 0 200 400"><use href="#palm" /></svg>
+    </div>
+    <a href="#infos" class="scroll-hint" aria-label="Défiler">⌄</a>
+  </header>
+
+  <main>
+    <!-- INFOS -->
+    <section class="section" id="infos">
+      <h2 class="section-title"><span>Les infos</span></h2>
+      <p class="section-sub">Tout ce qu'il faut savoir avant de sortir le saxo</p>
+
+      <div class="cards">
+        <article class="card reveal">
+          <div class="card-icon">📅</div>
+          <h3>Quand ?</h3>
+          <p><strong>Samedi 21 novembre 2026</strong></p>
+          <p>À partir de <strong id="info-time">19h00</strong></p>
+          <p class="muted">… et jusqu'à ce que le dernier groove s'éteigne</p>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon">📍</div>
+          <h3>Où ?</h3>
+          <p><strong>Mas des Sauges</strong></p>
+          <p class="muted" id="info-address">Adresse précise envoyée sur le groupe WhatsApp</p>
+          <a class="link" id="mapsLink" href="https://www.google.com/maps/search/?api=1&query=Mas+des+Sauges" target="_blank" rel="noopener">Voir sur la carte →</a>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon">🎩</div>
+          <h3>Dress code</h3>
+          <p><strong>Chic de minuit</strong> ou <strong>vibes tropicales</strong></p>
+          <p class="muted">…ou le meilleur des deux mondes</p>
+          <a class="link" href="#dresscode">Trouver l'inspiration →</a>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon">💬</div>
+          <h3>Le QG</h3>
+          <p>Groupe WhatsApp <strong>« Didi's 30 »</strong></p>
+          <p class="muted">Toutes les news, le covoit' et les surprises s'organisent là-bas</p>
+        </article>
+      </div>
+
+      <div class="calendar reveal">
+        <p>Ne l'oublie surtout pas :</p>
+        <div class="calendar-buttons">
+          <a class="btn btn-ghost small" id="gcalLink" target="_blank" rel="noopener">＋ Google Agenda</a>
+          <button class="btn btn-ghost small" id="icsBtn">＋ Apple / Outlook (.ics)</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- THEME -->
+    <section class="section theme" id="theme">
+      <h2 class="section-title"><span>Le thème</span></h2>
+      <p class="section-sub">Quand le club de jazz enfumé rencontre la plage au clair de lune</p>
+
+      <div class="theme-split">
+        <article class="theme-half theme-jazz reveal">
+          <div class="theme-emoji">🎷</div>
+          <h3>Midnight Jazz</h3>
+          <p>
+            Lumières tamisées, velours, notes de contrebasse et voix suaves.
+            Imagine un speakeasy des années 20, un trompettiste dans un coin,
+            un verre d'ambré à la main et des conversations qui durent jusqu'au bout de la nuit.
+          </p>
+          <ul class="tags">
+            <li>Speakeasy</li><li>Art déco</li><li>Swing</li><li>Velours</li><li>Noir &amp; or</li>
+          </ul>
+        </article>
+
+        <div class="theme-amp" aria-hidden="true">&amp;</div>
+
+        <article class="theme-half theme-island reveal">
+          <div class="theme-emoji">🌴</div>
+          <h3>Island Grooves</h3>
+          <p>
+            Brise chaude, rythmes chaloupés, rhum arrangé et pieds qui ne tiennent plus en place.
+            Du reggae au zouk, de la bossa au calypso : la fête prend des airs de soirée sous les palmiers.
+          </p>
+          <ul class="tags">
+            <li>Reggae</li><li>Zouk</li><li>Bossa nova</li><li>Calypso</li><li>Tiki</li>
+          </ul>
+        </article>
+      </div>
+
+      <p class="theme-fusion reveal">
+        Le début de soirée sera <em>smooth &amp; jazzy</em>… puis, quand minuit sonnera,
+        l'île se réveille. 🌙 → 🌺
+      </p>
+    </section>
+
+    <!-- QUIZ -->
+    <section class="section quiz-section" id="quiz">
+      <h2 class="section-title"><span>Jazz ou Island ?</span></h2>
+      <p class="section-sub">Le petit test pour savoir quel personnage tu seras à la soirée</p>
+
+      <div class="quiz reveal" id="quiz-box">
+        <div id="quiz-questions"></div>
+        <div class="quiz-result" id="quiz-result" hidden></div>
+      </div>
+    </section>
+
+    <!-- DRESS CODE -->
+    <section class="section" id="dresscode">
+      <h2 class="section-title"><span>Dress code</span></h2>
+      <p class="section-sub">Choisis ton camp… ou mixe les deux</p>
+
+      <div class="dress-grid">
+        <article class="dress-card dress-jazz reveal">
+          <h3>Team Midnight</h3>
+          <div class="swatches">
+            <span style="--c:#0b0f2a" title="Bleu nuit"></span>
+            <span style="--c:#111" title="Noir"></span>
+            <span style="--c:#d4af37" title="Or"></span>
+            <span style="--c:#7a1f3d" title="Bordeaux"></span>
+            <span style="--c:#f3e9d2" title="Ivoire"></span>
+          </div>
+          <ul>
+            <li>Costume, nœud papillon, bretelles</li>
+            <li>Robe en satin ou à sequins</li>
+            <li>Chapeau fedora, gants, perles</li>
+            <li>Rouge à lèvres rouge &amp; lunettes rondes</li>
+          </ul>
+        </article>
+
+        <article class="dress-card dress-mix reveal">
+          <h3>Le combo parfait</h3>
+          <div class="swatches">
+            <span style="--c:#0b0f2a"></span>
+            <span style="--c:#d4af37"></span>
+            <span style="--c:#1fb5a5"></span>
+            <span style="--c:#ff6f61"></span>
+          </div>
+          <ul>
+            <li>Smoking + chemise hawaïenne</li>
+            <li>Robe noire + fleur d'hibiscus dans les cheveux</li>
+            <li>Fedora en paille + mocassins</li>
+            <li>Bref : chic, mais en vacances</li>
+          </ul>
+        </article>
+
+        <article class="dress-card dress-island reveal">
+          <h3>Team Island</h3>
+          <div class="swatches">
+            <span style="--c:#1fb5a5" title="Turquoise"></span>
+            <span style="--c:#ff6f61" title="Corail"></span>
+            <span style="--c:#ffc857" title="Mangue"></span>
+            <span style="--c:#2e8b57" title="Palmier"></span>
+            <span style="--c:#ff9ecb" title="Hibiscus"></span>
+          </div>
+          <ul>
+            <li>Chemise à fleurs, lin, couleurs vives</li>
+            <li>Robe fluide et imprimés tropicaux</li>
+            <li>Colliers de fleurs, chapeau de paille</li>
+            <li>Lunettes de soleil (même de nuit)</li>
+          </ul>
+        </article>
+      </div>
+      <p class="note reveal">⚠️ C'est fin novembre : prévois une petite veste, les îles sont dans le cœur, pas dans la météo 😉</p>
+    </section>
+
+    <!-- PROGRAMME -->
+    <section class="section" id="programme">
+      <h2 class="section-title"><span>Le programme</span></h2>
+      <p class="section-sub">Sous réserve de quelques surprises…</p>
+
+      <ol class="timeline">
+        <li class="reveal">
+          <span class="tl-time">19h00</span>
+          <div class="tl-content"><h3>🥂 Welcome drinks</h3><p>Accueil en douceur, cocktails &amp; ambiance lounge jazz.</p></div>
+        </li>
+        <li class="reveal">
+          <span class="tl-time">20h30</span>
+          <div class="tl-content"><h3>🍽️ Le dîner</h3><p>On se pose, on mange, on trinque à Didi.</p></div>
+        </li>
+        <li class="reveal">
+          <span class="tl-time">22h00</span>
+          <div class="tl-content"><h3>🎂 Le gâteau</h3><p>30 bougies, un vœu, et peut-être quelques discours émouvants.</p></div>
+        </li>
+        <li class="reveal">
+          <span class="tl-time">23h00</span>
+          <div class="tl-content"><h3>🎺 Swing time</h3><p>La piste s'ouvre sur du jazz, du swing et de la soul.</p></div>
+        </li>
+        <li class="reveal">
+          <span class="tl-time">00h00</span>
+          <div class="tl-content"><h3>🌴 Island takeover</h3><p>Minuit sonne : place au reggae, zouk, dancehall et afro-grooves jusqu'au bout de la nuit.</p></div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- COCKTAILS -->
+    <section class="section" id="cocktails">
+      <h2 class="section-title"><span>La carte du bar</span></h2>
+      <p class="section-sub">Une carte imaginaire… ou pas 🍸</p>
+
+      <div class="menu reveal">
+        <div class="menu-item">
+          <div><h4>Blue Note Mojito</h4><p>Rhum blanc, menthe, citron vert, une touche de curaçao bleu</p></div>
+          <span class="menu-dots"></span><span class="menu-price">♪</span>
+        </div>
+        <div class="menu-item">
+          <div><h4>Midnight Rum Punch</h4><p>Rhum ambré, fruits de la passion, cannelle, muscade</p></div>
+          <span class="menu-dots"></span><span class="menu-price">♫</span>
+        </div>
+        <div class="menu-item">
+          <div><h4>Satchmo Sunset</h4><p>Rhum, ananas, grenadine, jus d'orange</p></div>
+          <span class="menu-dots"></span><span class="menu-price">♩</span>
+        </div>
+        <div class="menu-item">
+          <div><h4>The Dirty Thirty</h4><p>Le cocktail signature de la reine de la soirée (recette secrète)</p></div>
+          <span class="menu-dots"></span><span class="menu-price">♬</span>
+        </div>
+        <div class="menu-item">
+          <div><h4>Virgin Coconut Groove</h4><p>Coco, ananas, citron vert — sans alcool, plein de soleil</p></div>
+          <span class="menu-dots"></span><span class="menu-price">☀</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLAYLIST -->
+    <section class="section" id="playlist">
+      <h2 class="section-title"><span>La playlist</span></h2>
+      <p class="section-sub">Quel son te fera forcément danser ? Propose-le !</p>
+
+      <form class="playlist-form reveal" id="playlistForm">
+        <div class="field">
+          <label for="song">Titre &amp; artiste</label>
+          <input id="song" name="song" type="text" placeholder="ex : Take Five — Dave Brubeck" required />
+        </div>
+        <div class="field">
+          <label for="vibe">Plutôt…</label>
+          <select id="vibe" name="vibe">
+            <option>🎷 Midnight Jazz</option>
+            <option>🌴 Island Grooves</option>
+            <option>🔥 Banger de fin de soirée</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="from">Ton prénom</label>
+          <input id="from" name="from" type="text" placeholder="ex : Tonton Jojo" />
+        </div>
+        <button type="submit" class="btn btn-gold">Envoyer sur WhatsApp 🎶</button>
+      </form>
+
+      <div class="vinyls reveal">
+        <div class="vinyl"><div class="vinyl-label">Take Five</div></div>
+        <div class="vinyl"><div class="vinyl-label">Is This Love</div></div>
+        <div class="vinyl"><div class="vinyl-label">Fly Me to the Moon</div></div>
+        <div class="vinyl"><div class="vinyl-label">Girl from Ipanema</div></div>
+      </div>
+    </section>
+
+    <!-- RSVP -->
+    <section class="section rsvp" id="rsvp">
+      <h2 class="section-title"><span>Tu viens ?</span></h2>
+      <p class="section-sub">Confirme ta présence pour que Didi prévoie assez de rhum (et de gâteau)</p>
+
+      <form class="rsvp-form reveal" id="rsvpForm">
+        <div class="field">
+          <label for="name">Prénom(s)</label>
+          <input id="name" type="text" placeholder="ex : Léa &amp; Tom" required />
+        </div>
+        <div class="field">
+          <label for="count">Nombre de personnes</label>
+          <input id="count" type="number" min="1" max="10" value="1" />
+        </div>
+        <div class="radio-group" role="radiogroup">
+          <label><input type="radio" name="answer" value="yes" checked /> <span>Je serai là ! 🎉</span></label>
+          <label><input type="radio" name="answer" value="no" /> <span>Je ne pourrai pas 😢</span></label>
+        </div>
+        <div class="field">
+          <label for="msg">Un petit mot pour Didi ?</label>
+          <textarea id="msg" rows="3" placeholder="Joyeux anniversaire ! …"></textarea>
+        </div>
+        <button type="submit" class="btn btn-gold">Envoyer ma réponse sur WhatsApp</button>
+      </form>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <h2 class="section-title"><span>FAQ</span></h2>
+      <p class="section-sub">Les questions que tout le monde se pose</p>
+
+      <div class="faq reveal">
+        <details>
+          <summary>Je peux venir accompagné·e ?</summary>
+          <p>Avec plaisir ! Indique-le simplement quand tu confirmes ta venue.</p>
+        </details>
+        <details>
+          <summary>Est-ce que je dois apporter un cadeau ?</summary>
+          <p>Ta présence est le plus beau des cadeaux 💛. Si tu tiens absolument à faire plaisir, une cagnotte sera peut-être partagée sur le groupe WhatsApp.</p>
+        </details>
+        <details>
+          <summary>Comment je viens ? Y a-t-il un parking ?</summary>
+          <p>Toutes les infos pratiques (adresse, parking, covoiturage) seront partagées sur le groupe WhatsApp « Didi's 30 ». Pensez à vous organiser pour le retour : on boit, on ne conduit pas !</p>
+        </details>
+        <details>
+          <summary>Peut-on dormir sur place ?</summary>
+          <p>À confirmer — demande sur le groupe WhatsApp, on te tiendra au courant.</p>
+        </details>
+        <details>
+          <summary>Je n'ai rien dans le thème, c'est grave ?</summary>
+          <p>Pas du tout ! Un accessoire suffit : un chapeau, une fleur, un nœud pap', une chemise à fleurs… L'important c'est de venir danser.</p>
+        </details>
+        <details>
+          <summary>J'ai une surprise / un discours à préparer…</summary>
+          <p>Génial ! Contacte les organisateurs en privé (pas sur le groupe, Didi lit tout 👀).</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="deco-line" aria-hidden="true"><span>◆</span></div>
+    <p class="footer-title">Didi's 30</p>
+    <p>Midnight Jazz &amp; Island Grooves · 21.11.2026 · Mas des Sauges</p>
+    <p class="muted">Fait avec 💛, du swing et un peu de rhum</p>
+    <button class="btn btn-ghost small" id="partyBtn">🎉 Appuie ici</button>
+  </footer>
+
+  <!-- SVG sprites -->
+  <svg width="0" height="0" style="position:absolute">
+    <symbol id="palm" viewBox="0 0 200 400">
+      <path d="M100 400 C98 320 96 250 104 170" stroke="currentColor" stroke-width="10" fill="none" stroke-linecap="round"/>
+      <path d="M104 170 C70 140 30 140 0 170 C40 150 70 155 104 175Z" fill="currentColor"/>
+      <path d="M104 170 C80 120 40 100 10 110 C50 115 80 135 104 175Z" fill="currentColor"/>
+      <path d="M104 170 C110 120 100 80 80 50 C110 80 118 120 106 175Z" fill="currentColor"/>
+      <path d="M104 170 C140 130 180 130 200 150 C165 140 135 150 106 176Z" fill="currentColor"/>
+      <path d="M104 170 C140 110 180 100 195 105 C160 115 130 140 106 176Z" fill="currentColor"/>
+      <path d="M104 170 C130 150 160 170 175 200 C150 180 125 175 104 178Z" fill="currentColor"/>
+      <path d="M104 170 C80 160 50 180 35 210 C60 185 85 178 104 178Z" fill="currentColor"/>
+    </symbol>
+  </svg>
+
+  <script src="script.js"></script>
+</body>
+</html>
