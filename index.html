@@ -28,7 +28,6 @@
       <li><a href="#programme">Programme</a></li>
       <li><a href="#playlist">Playlist</a></li>
       <li><a href="#faq">FAQ</a></li>
-      <li><a href="#rsvp" class="nav-cta">Je viens !</a></li>
     </ul>
   </nav>
 
@@ -62,8 +61,7 @@
       <p class="countdown-done" id="countdownDone" hidden>🎉 C'est le grand soir ! 🎉</p>
 
       <div class="hero-buttons">
-        <a href="#rsvp" class="btn btn-gold">Je confirme ma venue</a>
-        <a href="#infos" class="btn btn-ghost">Les infos</a>
+        <a href="#infos" class="btn btn-gold">Les infos</a>
       </div>
     </div>
 
@@ -226,6 +224,50 @@
           </ul>
         </article>
       </div>
+
+      <h3 class="outfits-title reveal">Des idées de tenues</h3>
+      <div class="outfits">
+        <article class="outfit reveal">
+          <div class="outfit-emoji">🤵</div>
+          <h4>Le crooner</h4>
+          <p>Smoking noir, nœud papillon, pochette dorée et chaussures vernies</p>
+        </article>
+        <article class="outfit reveal">
+          <div class="outfit-emoji">💃</div>
+          <h4>La diva du speakeasy</h4>
+          <p>Robe longue en satin bordeaux, gants, collier de perles et bandeau à plumes</p>
+        </article>
+        <article class="outfit reveal">
+          <div class="outfit-emoji">🕴️</div>
+          <h4>Le gangster chic</h4>
+          <p>Costume rayé, bretelles, chemise ivoire et fedora</p>
+        </article>
+        <article class="outfit reveal">
+          <div class="outfit-emoji">✨</div>
+          <h4>La flapper</h4>
+          <p>Robe à franges et sequins dorés, serre-tête et sautoir long</p>
+        </article>
+        <article class="outfit reveal">
+          <div class="outfit-emoji">🌺</div>
+          <h4>Le roi de l'île</h4>
+          <p>Chemise hawaïenne ouverte, pantalon en lin blanc, chapeau panama</p>
+        </article>
+        <article class="outfit reveal">
+          <div class="outfit-emoji">🌴</div>
+          <h4>La sirène tropicale</h4>
+          <p>Robe longue fluide corail ou turquoise, collier de fleurs, hibiscus dans les cheveux</p>
+        </article>
+        <article class="outfit reveal">
+          <div class="outfit-emoji">🌙</div>
+          <h4>Le combo minuit</h4>
+          <p>Veste de smoking sur short en lin et chemise à fleurs, mocassins sans chaussettes</p>
+        </article>
+        <article class="outfit reveal">
+          <div class="outfit-emoji">🍹</div>
+          <h4>La rhum-girl</h4>
+          <p>Combinaison noire, boucles d'oreilles dorées, fleur de frangipanier et lunettes rondes</p>
+        </article>
+      </div>
       <p class="note reveal">⚠️ C'est fin novembre : prévois une petite veste, les îles sont dans le cœur, pas dans la météo 😉</p>
     </section>
 
@@ -290,27 +332,7 @@
     <!-- PLAYLIST -->
     <section class="section" id="playlist">
       <h2 class="section-title"><span>La playlist</span></h2>
-      <p class="section-sub">Quel son te fera forcément danser ? Propose-le !</p>
-
-      <form class="playlist-form reveal" id="playlistForm">
-        <div class="field">
-          <label for="song">Titre &amp; artiste</label>
-          <input id="song" name="song" type="text" placeholder="ex : Take Five — Dave Brubeck" required />
-        </div>
-        <div class="field">
-          <label for="vibe">Plutôt…</label>
-          <select id="vibe" name="vibe">
-            <option>🎷 Midnight Jazz</option>
-            <option>🌴 Island Grooves</option>
-            <option>🔥 Banger de fin de soirée</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="from">Ton prénom</label>
-          <input id="from" name="from" type="text" placeholder="ex : Tonton Jojo" />
-        </div>
-        <button type="submit" class="btn btn-gold">Envoyer sur WhatsApp 🎶</button>
-      </form>
+      <p class="section-sub">Un avant-goût des sons qui vont faire danser la piste</p>
 
       <div class="vinyls reveal">
         <div class="vinyl"><div class="vinyl-label">Take Five</div></div>
@@ -318,32 +340,6 @@
         <div class="vinyl"><div class="vinyl-label">Fly Me to the Moon</div></div>
         <div class="vinyl"><div class="vinyl-label">Girl from Ipanema</div></div>
       </div>
-    </section>
-
-    <!-- RSVP -->
-    <section class="section rsvp" id="rsvp">
-      <h2 class="section-title"><span>Tu viens ?</span></h2>
-      <p class="section-sub">Confirme ta présence pour que Didi prévoie assez de rhum (et de gâteau)</p>
-
-      <form class="rsvp-form reveal" id="rsvpForm">
-        <div class="field">
-          <label for="name">Prénom(s)</label>
-          <input id="name" type="text" placeholder="ex : Léa &amp; Tom" required />
-        </div>
-        <div class="field">
-          <label for="count">Nombre de personnes</label>
-          <input id="count" type="number" min="1" max="10" value="1" />
-        </div>
-        <div class="radio-group" role="radiogroup">
-          <label><input type="radio" name="answer" value="yes" checked /> <span>Je serai là ! 🎉</span></label>
-          <label><input type="radio" name="answer" value="no" /> <span>Je ne pourrai pas 😢</span></label>
-        </div>
-        <div class="field">
-          <label for="msg">Un petit mot pour Didi ?</label>
-          <textarea id="msg" rows="3" placeholder="Joyeux anniversaire ! …"></textarea>
-        </div>
-        <button type="submit" class="btn btn-gold">Envoyer ma réponse sur WhatsApp</button>
-      </form>
     </section>
 
     <!-- FAQ -->
@@ -354,7 +350,7 @@
       <div class="faq reveal">
         <details>
           <summary>Je peux venir accompagné·e ?</summary>
-          <p>Avec plaisir ! Indique-le simplement quand tu confirmes ta venue.</p>
+          <p>Avec plaisir ! Avec plaisir, viens avec qui tu veux !</p>
         </details>
         <details>
           <summary>Est-ce que je dois apporter un cadeau ?</summary>
@@ -371,10 +367,6 @@
         <details>
           <summary>Je n'ai rien dans le thème, c'est grave ?</summary>
           <p>Pas du tout ! Un accessoire suffit : un chapeau, une fleur, un nœud pap', une chemise à fleurs… L'important c'est de venir danser.</p>
-        </details>
-        <details>
-          <summary>J'ai une surprise / un discours à préparer…</summary>
-          <p>Génial ! Contacte les organisateurs en privé (pas sur le groupe, Didi lit tout 👀).</p>
         </details>
       </div>
     </section>

@@ -514,6 +514,12 @@ strong { font-weight: 600; color: var(--ivory); }
 .dress-card ul { list-style: none; }
 .dress-card li { padding: 0.35rem 0 0.35rem 1.4rem; position: relative; }
 .dress-card li::before { content: "✦"; position: absolute; left: 0; color: var(--gold); }
+.outfits-title { font-family: var(--font-serif); font-size: 1.6rem; text-align: center; color: var(--gold-light); margin: 3.5rem 0 1.5rem; }
+.outfits { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; }
+.outfit { padding: 1.5rem; text-align: center; background: rgba(13, 18, 53, 0.6); border: 1px solid rgba(212, 175, 55, 0.25); border-radius: 8px; }
+.outfit-emoji { font-size: 2.6rem; margin-bottom: 0.5rem; }
+.outfit h4 { font-family: var(--font-serif); font-size: 1.2rem; color: var(--gold-light); margin-bottom: 0.4rem; }
+.outfit p { font-size: 0.9rem; color: var(--muted); }
 .note { text-align: center; margin-top: 2.5rem; color: var(--muted); }
 
 /* ---------- TIMELINE ---------- */
@@ -563,47 +569,6 @@ strong { font-weight: 600; color: var(--ivory); }
 .menu-item p { font-size: 0.88rem; color: var(--muted); }
 .menu-dots { flex: 1; border-bottom: 2px dotted rgba(212, 175, 55, 0.4); margin-bottom: 0.5rem; min-width: 20px; }
 .menu-price { color: var(--teal); font-size: 1.4rem; }
-
-/* ---------- FORMS ---------- */
-.playlist-form, .rsvp-form {
-  max-width: 600px;
-  margin: 0 auto;
-  display: grid;
-  gap: 1.2rem;
-  padding: 2.5rem 2rem;
-  background: rgba(13, 18, 53, 0.6);
-  border: 1px solid rgba(212, 175, 55, 0.3);
-  border-radius: 12px;
-}
-.field { display: grid; gap: 0.4rem; }
-.field label { font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-light); }
-input[type="text"], input[type="number"], select, textarea {
-  width: 100%;
-  padding: 0.8rem 1rem;
-  font-family: var(--font-body);
-  font-size: 1rem;
-  color: var(--text);
-  background: rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(243, 233, 210, 0.2);
-  border-radius: 6px;
-  transition: border-color 0.2s;
-}
-select option { background: var(--night-2); }
-input:focus, select:focus, textarea:focus { outline: none; border-color: var(--teal); }
-.radio-group { display: flex; gap: 1rem; flex-wrap: wrap; }
-.radio-group label { flex: 1; min-width: 180px; cursor: pointer; }
-.radio-group input { position: absolute; opacity: 0; }
-.radio-group span {
-  display: block;
-  text-align: center;
-  padding: 0.9rem;
-  border: 1px solid rgba(243, 233, 210, 0.25);
-  border-radius: 8px;
-  transition: all 0.2s;
-}
-.radio-group input:checked + span { border-color: var(--gold); background: rgba(212, 175, 55, 0.15); color: var(--gold-light); }
-.radio-group input:focus-visible + span { outline: 2px solid var(--teal); }
-.rsvp-form .btn, .playlist-form .btn { justify-self: center; margin-top: 0.5rem; }
 
 /* ---------- VINYLS ---------- */
 .vinyls { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-top: 3rem; }
@@ -664,21 +629,6 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--t
 .footer-title { font-family: var(--font-script); font-size: 2.5rem; color: var(--gold); }
 .footer p { margin-bottom: 0.4rem; }
 .footer .btn { margin-top: 1.2rem; }
-
-/* ---------- TOAST ---------- */
-.toast {
-  position: fixed;
-  bottom: 2rem; left: 50%;
-  transform: translate(-50%, 100px);
-  background: var(--gold);
-  color: var(--night);
-  padding: 0.8rem 1.5rem;
-  border-radius: 999px;
-  font-weight: 600;
-  z-index: 200;
-  transition: transform 0.4s;
-}
-.toast.show { transform: translate(-50%, 0); }
 
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 860px) {

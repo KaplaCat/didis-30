@@ -5,7 +5,6 @@ const CONFIG = {
   time: "19h00",
   place: "Mas des Sauges",
   address: "", // ex : "123 chemin des Sauges, 30000 Nîmes" — laisse vide pour garder le message par défaut
-  whatsappNumber: "", // ex : "33612345678" (sans + ni espaces) — vide = l'invité choisit la conversation
 };
 
 const $ = (s) => document.querySelector(s);
@@ -136,36 +135,6 @@ document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
   });
 })();
 
-// ===== WhatsApp =====
-function sendWhatsApp(text) {
-  const base = CONFIG.whatsappNumber ? "https://wa.me/" + CONFIG.whatsappNumber : "https://wa.me/";
-  window.open(base + "?text=" + encodeURIComponent(text), "_blank");
-}
-
-$("#playlistForm").addEventListener("submit", (e) => {
-  e.preventDefault();
-  const song = $("#song").value.trim();
-  const vibe = $("#vibe").value;
-  const from = $("#from").value.trim();
-  sendWhatsApp(`🎶 Proposition pour la playlist de Didi's 30 :\n${song}\n${vibe}${from ? "\n— " + from : ""}`);
-  e.target.reset();
-  toast("Merci ! Ton son est en route 🎷");
-});
-
-$("#rsvpForm").addEventListener("submit", (e) => {
-  e.preventDefault();
-  const name = $("#name").value.trim();
-  const count = $("#count").value;
-  const yes = document.querySelector('input[name="answer"]:checked').value === "yes";
-  const msg = $("#msg").value.trim();
-  const text = yes
-    ? `🎉 Didi's 30 — ${name} sera là ! (${count} personne${count > 1 ? "s" : ""})`
-    : `😢 Didi's 30 — ${name} ne pourra malheureusement pas venir.`;
-  sendWhatsApp(text + (msg ? `\n💌 « ${msg} »` : ""));
-  if (yes) launchConfetti();
-  toast(yes ? "Trop bien, à très vite ! 🥂" : "Tu vas nous manquer 💛");
-});
-
 // ===== Quiz =====
 (() => {
   const questions = [
@@ -293,14 +262,3 @@ function animateConfetti() {
 
 $("#partyBtn").addEventListener("click", () => launchConfetti(250));
 $(".title-30").addEventListener("click", () => launchConfetti());
-
-// ===== Toast =====
-function toast(text) {
-  const t = Object.assign(document.createElement("div"), { className: "toast", textContent: text });
-  document.body.appendChild(t);
-  requestAnimationFrame(() => t.classList.add("show"));
-  setTimeout(() => {
-    t.classList.remove("show");
-    setTimeout(() => t.remove(), 400);
-  }, 3000);
-}
