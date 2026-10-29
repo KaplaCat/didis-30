@@ -59,7 +59,7 @@
     return (d ? `${d} j ` : "") + `${pad(h)} h ${pad(m)} min ${pad(sec)} s`;
   }
 
-  console.log("%c🎷 Psst… Au Speakeasy de Minuit, on frappe trois fois. Sur la lune.", "font: 15px Georgia; color: #d4af37");
+  console.log("%c🎷 Coucou chat. Tu as trouvé un petit indice. Voici un indice pour chercher ce qui est caché : Je n'ai pas de propre lumière. Je change de visage tout au long du mois, sans jamais vieillir. Qui suis-je ?", "font: 15px Georgia; color: #d4af37");
 
   // ----- Éléments -----
   const door = Object.assign(document.createElement("div"), { className: "hunt-door", hidden: true });
